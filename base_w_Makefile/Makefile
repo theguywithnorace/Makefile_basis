@@ -21,6 +21,8 @@ OBJS		= ${patsubst ${SRC_DIR}%.c, ${OBJ_DIR}%.o, ${SRCS}}
 
 #si j'avais voulu garder le .o dans le meme directory j'aurais mis :
 # gcc -I ${HDR_DIR} -c $< -o ${<:.c=.o}
+#Pour du ASSEMBLEUR : 
+# 	nasm -f macho64 $< -o $@
 ${OBJ_DIR}%.o	: ${SRC_DIR}%.c
 	gcc -c -I ${HDR_DIR} -c -o $@ $<
 
